@@ -1,0 +1,52 @@
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  /* This style below will be inherited */
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+.header {
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 100;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.youtube-logo {
+    height: 20px;
+    object-fit: contain;
+}
+.main-container {
+    padding-top: 80px; /* Gives space so header doesn't block content */
+    padding-left: 96px; 
+    padding-right: 24px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.video-grid {
+    display: grid;
+    /* Automatically creates columns that wrap based on screen size */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    column-gap: 16px;
+    row-gap: 40px;
+}
+
+.thumbnail {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
