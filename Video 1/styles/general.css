@@ -35,18 +35,51 @@ body {
     padding-right: 24px;
     background-color: #f9f9f9;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .video-grid {
     display: grid;
     /* Automatically creates columns that wrap based on screen size */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     column-gap: 16px;
     row-gap: 40px;
+    width: 100%;
 }
 
 .thumbnail {
     width: 100%;
     border-radius: 12px;
     object-fit: cover;
+}
+/* =======================================================
+   MOBILE RESPONSIVE BREAKPOINTS (ALL-PAGE LAYOUT CHANGES)
+   ======================================================= */
+
+/* 1. For smaller laptop screens or tablets held sideways */
+@media (max-width: 1000px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* 2. For standard tablets or large phone views */
+@media (max-width: 750px) {
+    .main-container {
+        padding-left: 24px !important; /* Shrink space because sidebar hides */
+    }
+    .sidebar {
+        display: none !important; /* Hide the sidebar to save screen space */
+    }
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* 3. For small mobile smartphones */
+@media (max-width: 500px) {
+    .video-grid {
+        grid-template-columns: 1fr !important; /* Stack into 1 full column */
+        row-gap: 24px;
+    }
 }
