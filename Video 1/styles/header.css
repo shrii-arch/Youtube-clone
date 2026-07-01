@@ -120,6 +120,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  justify-content: center;
 }
 
 .notifications-count {
@@ -176,4 +177,59 @@
     background-color: #e5e5e5 !important;
     border-radius: 50%; /* Forms a clean circle background layer */
     cursor: pointer;
+}
+/* =======================================================
+   HEADER MICRO-INTERACTIONS (GRAY HOVER CIRCLES)
+   ======================================================= */
+
+/* 1. Make the search and voice buttons show a circular background */
+.search-button, .voice-search-button {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+/* 2. Style the top-right feature icons (Create, Apps, Notifications) */
+.upload-icon, .youtube-apps-icon, .notifications-icon, .hamburger-menu {
+    cursor: pointer;
+    padding: 8px; /* Creates invisible internal padding for a perfect circle shape */
+    border-radius: 50%; /* Cuts corners into a neat circle background track */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.upload-icon:hover, .youtube-apps-icon:hover, .notifications-icon:hover, .hamburger-menu:hover {
+    background-color: #f2f2f2 !important; /* Soft grey highlight color */
+}
+
+/* 3. Add a subtle click shrink feedback effect */
+.upload-icon:active, .youtube-apps-icon:active, .notifications-icon:active, .hamburger-menu:active {
+    transform: scale(0.95);
+}
+/* 1. Ensure the wrapper container stays stable without its own hover color */
+.notifications-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. Apply the circular gray background ONLY to the bell image */
+.notifications-container .notifications-icon {
+    padding: 8px; /* Creates room for a perfect circle around the bell */
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+/* 3. When you hover over the container, ONLY the bell highlights gray */
+.notifications-container:hover .notifications-icon {
+    background-color: #f2f2f2 !important;
+}
+
+/* 4. Keep the red badge perfectly locked to the top-right corner of the bell */
+.notifications-count {
+    position: absolute;
+    top: 2px;     /* Adjust these numbers slightly if needed */
+    right: 2px;   /* to center the red circle on the top-right corner */
+    pointer-events: none; /* Prevents the badge from stealing mouse hovers */
 }
