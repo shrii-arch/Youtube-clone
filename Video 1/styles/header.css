@@ -167,3 +167,13 @@
 .notifications-container:hover .tooltip {
   opacity: 1;
 }
+/* Highlight search and voice buttons smoothly */
+.search-button:hover,
+.voice-search-button:hover,
+.upload-icon:hover,
+.youtube-apps-icon:hover,
+.notifications-icon:hover {
+    background-color: #e5e5e5 !important;
+    border-radius: 50%; /* Forms a clean circle background layer */
+    cursor: pointer;
+}

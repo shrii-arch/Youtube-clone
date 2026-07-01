@@ -15,10 +15,12 @@
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  transition: background-color 0.15s ease; /* Smooth transition for hover effect */
+  border-radius: 10px; /* Optional: adds a slight rounding to the corners */
 }
 
 .sidebar-link:hover {
-  background-color: #f1f1f1;
+  background-color: #f2f2f2;
 }
 
 .sidebar-link img {

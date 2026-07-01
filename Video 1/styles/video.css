@@ -90,3 +90,25 @@
   right: 8px;
   font-family: Roboto, Arial, sans-serif;
 }
+/* 1. Ensure all video cards transition smoothly over half a second */
+.video-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+/* 2. When hovering, lift the card slightly and add a subtle depth shadow shadow drop */
+.video-card:hover {
+    transform: translateY(-4px); /* Lifts the card slightly up */
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Adds an elegant soft shadow */
+}
+
+/* 3. Make the thumbnail expand slightly into its container box limits */
+.thumbnail-row img {
+    transition: transform 0.2s ease;
+}
+.video-card:hover .thumbnail-row img {
+    transform: scale(1.02); /* Scales image up by a tiny 2% */
+}
