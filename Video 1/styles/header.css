@@ -121,12 +121,14 @@
   align-items: center;
   cursor: pointer;
   justify-content: center;
+  width: 40px;  /* Fixed sizing ensures a perfect, stable circle track */
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
 }
 
+
 .notifications-count {
-  position: absolute;
-  top: -2px;
-  right: -5px;
   background-color: rgb(200, 0, 0);
   color: white;
   font-family: Roboto, Arial, sans-serif;
@@ -205,31 +207,31 @@
 .upload-icon:active, .youtube-apps-icon:active, .notifications-icon:active, .hamburger-menu:active {
     transform: scale(0.95);
 }
-/* 1. Ensure the wrapper container stays stable without its own hover color */
-.notifications-container {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /* 2. Apply the circular gray background ONLY to the bell image */
 .notifications-container .notifications-icon {
-    padding: 8px; /* Creates room for a perfect circle around the bell */
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
+    padding: 0 !important;
+    position: relative;
+    z-index: 2;
 }
 
 /* 3. When you hover over the container, ONLY the bell highlights gray */
-.notifications-container:hover .notifications-icon {
+.notifications-container:hover {
     background-color: #f2f2f2 !important;
 }
 
 /* 4. Keep the red badge perfectly locked to the top-right corner of the bell */
 .notifications-count {
     position: absolute;
-    top: 2px;     /* Adjust these numbers slightly if needed */
-    right: 2px;   /* to center the red circle on the top-right corner */
+    top: 4px;     /* Adjust these numbers slightly if needed */
+    right: 4px;   /* to center the red circle on the top-right corner */
+    z-index: 3; /* Ensures the badge is always above the bell icon */
     pointer-events: none; /* Prevents the badge from stealing mouse hovers */
+}
+/* When a user clicks inside the search input box */
+.search-bar:focus {
+    outline: none; /* Wipes out the default ugly browser focus ring */
+    border: 1px solid #1c62b9; /* Classic YouTube deep-blue focus color boundary */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3); /* Premium internal depth shadow drop */
 }
