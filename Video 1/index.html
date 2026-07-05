@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/video.css">
     <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -177,7 +178,7 @@
                 </div>
             </div>
             <!-- CARD 7 -->
-            <div class="video-card">
+            <div class="video-card" data-video="https://youtube.com">
                 <div class="thumbnail-row">
                     <img class="thumbnail" src="thumbnails/thumbnail-20.jpg" alt="Thumbnail">
                     <div class="video-time">13:31</div>
@@ -213,6 +214,20 @@
         </section>
 
     </main>
-
+        <!--  NATIVE YOUTUBE WATCH LAYOUT -->
+    <div id="watchPageContainer" class="watch-page-container">
+        <!-- Left Column: The Big Main Widescreen Video Player -->
+        <div class="main-player-column">
+            <div class="video-wrapper-box">
+                <iframe id="videoIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <!-- Right Column: The Recommended Videos Sidebar List -->
+        <div class="sidebar-recommendations-column">
+            <!-- Your future sidebar recommendation cards will sit right here! -->
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
