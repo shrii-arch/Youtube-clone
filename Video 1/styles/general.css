@@ -3,9 +3,12 @@ p {
   margin-bottom: 0;
 }
 
-body {
+body, html {
   /* This style below will be inherited */
   margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: Roboto, Arial, sans-serif;
 }
 .header {
@@ -39,12 +42,10 @@ body {
 }
 
 .video-grid {
-    display: grid;
-    /* Automatically creates columns that wrap based on screen size */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    column-gap: 16px;
-    row-gap: 40px;
-    width: 100%;
+    height: calc(100vh - 56px);
+    overflow-y: auto; /* Feeds scroll cleanly within their own container bounds */
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .thumbnail {
@@ -98,17 +99,18 @@ body {
    FIXED WATCH LAYOUT (STRIPS THE BLANK WHITE SPACE)
    ======================================================= */
 .watch-page-container {
-    display: flex; /* Controlled via JavaScript */
+    display: none; /* Controlled via JavaScript */
     width: calc(100% - 72px) !important;
-    height: calc(100vh - 45px);
-    margin: 0 auto !important; /* Centers the player within the layout bounds */
+    height: calc(100vh - 56px) !important;
+    overflow-y: auto;
+    gap: 24px;
     padding: 24px;
     box-sizing: border-box;
     background-color: #ffffff;
     
     /* 🔑 FORCES PLAYER TO JUMP STRAIGHT TO THE TOP LAYER */
     position: absolute !important;
-    top: 45px !important;
+    top: 56px !important;
     left: 72px !important; /* Aligns with the left edge of the main content */
     z-index: 100;
 }
